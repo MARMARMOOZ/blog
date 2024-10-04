@@ -1,0 +1,30 @@
+{% load static %}
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+<title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<h2>{% block subject %}{% endblock %}</h2>
+<h5>published on {%block date%}{% endblock %}</h5>
+<br/>
+<hr/>
+{% block content %}
+{% endblock %}
+<hr/>
+<br/>
+<h2>Comments:</h2>
+{% block comments %}
+{% endblock %}
+<br/>
+<form action="" method="POST">
+{% csrf_token %}
+<label>Write a Comment:</label>
+<br/>
+<input type="text" name="comment"/>
+token:
+<input type="text" name="token"/>
+<input type="submit"/>
+</form>
+</body>
+</html>

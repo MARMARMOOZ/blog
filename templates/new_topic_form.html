@@ -1,0 +1,13 @@
+<form method="POST" action="">
+{% csrf_token %}
+<label>title:</label>
+<br/>
+<input type="text" name="title"/>
+<br/>
+<label>text and tags:</label>
+<br/>
+<input type="text" name="textn_tags"/>
+<br/>
+<input type="submit"/>
+</form>
+{{ msg }}
